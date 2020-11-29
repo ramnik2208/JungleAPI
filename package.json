@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/ramnik2208/JungleAPI#readme",
   "dependencies": {
-    "mongodb": "^3.6.3"
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.18",
+    "morgan": "^1.10.0"
   }
 }

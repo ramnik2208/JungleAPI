@@ -1,5 +1,5 @@
 const express = require("express");
-const controller = express.Controller();
+const controller = express.Router();
 const mongoose = require("mongoose");
 const bcrypt = require('bcrypt'); 
 
@@ -13,7 +13,7 @@ controller.post('/signup', (req, res, next) => {
             });
         } else {
             const user = new User({
-                _id: mongoose.Schema.Types.ObjectId(),
+                _id: mongoose.Types.ObjectId(),
                 email: req.body.email,
                 password: hash
         
