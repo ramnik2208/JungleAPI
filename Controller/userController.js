@@ -13,7 +13,15 @@ const User = require('../Model/user');
 //Der kan sagtens oprettes flere bruger under samme email, men det skal ikke ses. 
 
 controller.post('/signup', (req, res, next) => {
-    bcrypt.hash(req.body.password, 10, (err, hash) => {
+  User.find( {email: req.body.email})
+  .exec()
+  .then(user => {
+    if (user.length >= 1){
+      return res.status(409).json({
+        message:"Mail exists"
+      });
+    } else {
+      bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err) {
             return res.status(500).json({
               error: err
@@ -41,7 +49,9 @@ controller.post('/signup', (req, res, next) => {
               }); 
         }
     }) 
-    
+    }
+
+  });
 });
 
 module.exports = controller; 
