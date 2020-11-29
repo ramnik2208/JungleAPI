@@ -1,0 +1,24 @@
+{
+  "name": "JungleAPI",
+  "version": "1.0.0",
+  "description": "My first repository on GitHub",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramnik2208/JungleAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramnik2208/JungleAPI/issues"
+  },
+  "homepage": "https://github.com/ramnik2208/JungleAPI#readme",
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  }
+}
