@@ -58,4 +58,6 @@ button{
   cursor: pointer;
   width: 10%;
   opacity: 0.9;
+  background-color: rgb(117, 219, 122);
+  color: whitesmoke;
 }

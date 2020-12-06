@@ -1,3 +1,4 @@
+
 .edit {
   width: 200px;
   text-align: center;
@@ -6,13 +7,14 @@
 
 input {
   width:200px;
-
 }
+
 .name {
   color: #000000;
   font-size: 20px;
   font-weight: 400;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  border: 1px solid #cccccc;
 
   }
 
@@ -20,16 +22,15 @@ input {
   color: #000000;
   font-size: 50px;
   font-weight: 400;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   
 }
-
 
 .age {
   color: #000000;
   font-size: 20px;
   font-weight: 400;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .country {
@@ -39,7 +40,7 @@ input {
   margin-bottom: 30px;
 }
 #bio {
-  height: 200px;
+  height: 100px;
   width: 200px;
 }
 .bio{
@@ -47,6 +48,7 @@ input {
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 30px;
+  display: inline-block;
 
 }
 
@@ -62,4 +64,6 @@ button{
   opacity: 0.9;
   background-color: rgb(117, 219, 122);
   color: whitesmoke;
+
+  display: inline-block;
 }
