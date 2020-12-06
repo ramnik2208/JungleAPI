@@ -1,6 +1,5 @@
 * {box-sizing: border-box}
 
-/* Full-width input fields */
 
  input[type=text], input[type=email] {
     width: 10%;
@@ -29,7 +28,6 @@ input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
-/* Set a style for all buttons */
 button {
   background-color: #8ceb8f;
   color: white;

@@ -114,6 +114,14 @@ controller.get("/:userID", (req, res, next) => {
   })
 });
 
+controller.post("/:userID", (req, res, next) => {
+  User.findByIdAndUpdate(req.params.userID, {})
+  .exec()
+  .then()
+
+
+});
+
 controller.delete("/:userID", (req, res, next) => {
   User.remove({_id: req.params.userID})
   .exec()
