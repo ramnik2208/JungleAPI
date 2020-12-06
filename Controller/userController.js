@@ -100,6 +100,19 @@ controller.post("/login", (req, res, next) => {
     });
 });
 
+controller.get("/:userID", (req, res, next) => {
+  User.findById(req.params.userID)
+  .exec()
+  .then(user => {
+    console.log(user.email)
+    res.status(200).json({
+      message: "User found"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+  })
+});
 
 controller.delete("/:userID", (req, res, next) => {
   User.remove({_id: req.params.userID})
@@ -117,5 +130,7 @@ controller.delete("/:userID", (req, res, next) => {
     });
   });
 });
+
+
 
 module.exports = controller;
