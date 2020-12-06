@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Jugle</title>
+    <link rel= "stylesheet" href="stylesheet.css"
+<title></title>
 
 </head>
 <body>
-<center> <h1> Login </h1> </center>   
-<form action="http://localhost:3000/user/login" method="POST" enctype="multipart/form-data">
+<center> <h1> Jungle </h1> </center>   
+<form class="login" action="http://localhost:3000/user/login" method="POST">
 <div class="input">   
     <label for="text">E-mail</label>
     <input type="email" id="email" name="email">
@@ -15,11 +16,10 @@
     <label for="password">Password</label>
     <input type="password" id="to" name="password">
   </div>
-  <div class="input"> 
-      <label for="confirmPassword">Confirm Password</label>
-      <input type="password" id="confirmPassword" name="confirmPassword">
+    <div>
+         <button type="login" value="Login">Login</button>
+          </form>
     </div>
-    <button type="submit">Login</button>
 </form>
 </body>
 </html>
