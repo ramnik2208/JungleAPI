@@ -19,8 +19,12 @@
   },
   "homepage": "https://github.com/ramnik2208/JungleAPI#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "express-handlebars": "^5.2.0",
+    "hbs": "^4.1.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.10.18",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
   }
 }

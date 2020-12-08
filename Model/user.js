@@ -8,7 +8,12 @@ require: true,
 unique: true,
 match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
 },
-password: { type: String, require: true}
+password: { type: String, require: true},
+name: { type: String, require: true},
+age: { type: String, require: true},
+country: { type: String, require: true},
+bio: { type: String, require: false},
+gender: { type: String, require: true}
 }); 
 
 module.exports = mongoose.model('User', userSchema); 
