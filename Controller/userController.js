@@ -47,6 +47,9 @@ controller.post('/signup', (req, res, next) => {
             country: req.body.country,
             bio: req.body.bio,
             gender: req.body.gender,
+            likes: [],
+            dislikes: [],
+            matches: [],
             password: hash
           });
           user
@@ -97,9 +100,9 @@ controller.post("/login", (req, res, next) => {
             }
           );
           res.cookie('authcookie',token,{maxAge:900000,httpOnly:true});
-          res.render('index');
+          return res.redirect('/');
         }
-        res.status(401).json({
+        return res.status(401).json({
           message: "Auth failed"
         });
       });
@@ -111,6 +114,12 @@ controller.post("/login", (req, res, next) => {
       });
     });
 });
+
+controller.post("/logout", (req, res, next) => {
+  res.cookie('authcookie','',{ maxAge:1 });
+  res.redirect('/');
+})
+
 controller.get("/account", checkAuth, (req, res, next) => {
   User.findById(req.userData.userId)
   .exec()

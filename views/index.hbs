@@ -1,11 +1,31 @@
-<h1>{{ title }}</h1>
-<p>Welcome to {{ title }}</p>
-<b>hi2</b>
+<div class="nav"> 
+    <div class="right">
+        <a href="/user/account"><Button class="roundedButton">My Profile</Button></a>
+    </div>
+    <div class="right">
+        <form action="/user/logout" method="POST">
+        <button style="margin-right: 10px;" class="roundedButton" type="submit">Logout</button>
+        </form>
+    </div>
+</div>
+
+<div class="center">
 <h1> Jungle </h1> 
 <div>
     {{#each users }}
-    <div>
-        email:{{ email }}
+    <div class="card">
+        <h2>{{name}}</h2>
+        {{ email }}
+        <h4>{{bio}}</h4>
+        <div class="tinder--buttons">
+            <form action="/dislike/{{_id}}" method="POST">
+                    <button id="nope"><i class="fa fa-remove"></i></button>
+            </form>
+            <form action="/like/{{_id}}" method="POST">
+                <button style="margin-bottom: 100px;" id="love"><i class="fa fa-heart"></i></button>
+            </form>
+  </div>
     </div>
 {{/each}}
+</div>
 </div>
