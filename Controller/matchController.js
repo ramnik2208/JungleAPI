@@ -2,6 +2,41 @@ var express = require('express');
 var router = express.Router();
 const checkAuth = require('../Middleware/check-auth');
 const User = require('../Model/user');
+const mongoose = require("mongoose");
+
+// Get all matches
+router.get('/matches', checkAuth, function(req, res, next) {
+    console.log(req.userData.userId);
+    User.findById(req.userData.userId)
+    .exec()
+    .then( user => {
+        // Convert string array to mongooseObjectArray
+        let objectIdArray = user.matches.map(s => mongoose.Types.ObjectId(s));
+        console.log(objectIdArray);
+        User.find({
+            // Find user matches
+            _id: { $in: objectIdArray },
+        })
+        .lean()
+        .then(function(doc) {
+            console.log(doc);
+            return res.render('matches', {users: doc});
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json({
+              error: err 
+            });    
+          });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+          error: err 
+        });
+        
+      });
+});
 
 // Like user
 router.post('/like/:userID', checkAuth, function(req, res, next) {

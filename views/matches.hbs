@@ -1,0 +1,23 @@
+<div class="nav"> 
+    <div class="right">
+        <a href="/user/account"><Button class="roundedButton">My Profile</Button></a>
+    </div>
+    <div class="right">
+        <form action="/user/logout" method="POST">
+        <button style="margin-right: 10px;" class="roundedButton" type="submit">Logout</button>
+        </form>
+    </div>
+</div>
+
+<div class="center">
+<h1> My Matches </h1> 
+<div>
+    {{#each users }}
+    <div class="card">
+        <h2>{{name}}</h2>
+        {{ email }}
+        <h4>{{bio}}</h4>
+    </div>
+{{/each}}
+</div>
+</div>
