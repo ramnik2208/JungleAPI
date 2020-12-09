@@ -4,7 +4,7 @@ const checkAuth = require('../Middleware/check-auth');
 const User = require('../Model/user');
 
 // Like user
-router.post('/like/:userID', checkAuth,function(req, res, next) {
+router.post('/like/:userID', checkAuth, function(req, res, next) {
 
     User.findById(req.userData.userId)
     .exec()
@@ -18,6 +18,7 @@ router.post('/like/:userID', checkAuth,function(req, res, next) {
                 $push: { matches: req.params.userID}
             }); */
 
+            // add match to logged in user
             User.findByIdAndUpdate({_id: req.userData.userId},
                 {
                 $push: { matches: req.params.userID }
@@ -27,12 +28,23 @@ router.post('/like/:userID', checkAuth,function(req, res, next) {
                 } else { 
                    /* res.render('success', {name: req.body.name, action: 'updated!'}); */
                    console.log('added match!');
-                   return res.redirect('/');
+                   // add match to other user
+                   User.findByIdAndUpdate({_id: req.params.userID},
+                    {
+                    $push: { matches: req.userData.userId }
+                  }, function(err, result){
+                    if(err){
+                        res.send(err);
+                    } else { 
+                       /* res.render('success', {name: req.body.name, action: 'updated!'}); */
+                       console.log('liked!');
+                       return res.redirect('/');
+                    }
+                 });
                 }
              });
-        }
-    });
-    // Add userID to liked array on loggedin profile
+        } else {
+            // Add userID to liked array on loggedin profile
     User.findByIdAndUpdate({_id: req.params.userID},
         {
         $push: { likes: req.userData.userId }
@@ -42,9 +54,12 @@ router.post('/like/:userID', checkAuth,function(req, res, next) {
         } else { 
            /* res.render('success', {name: req.body.name, action: 'updated!'}); */
            console.log('liked!');
-           res.redirect('/');
+           return res.redirect('/');
         }
      });
+        }
+    });
+    
 })
 
 // Dislike User
@@ -76,7 +91,8 @@ router.get('/', checkAuth, function(req, res, next) {
             gender: 'female',
             // where user has not been shown before
             likes: { $nin: [req.userData.userId] },
-            dislikes: { $nin: [req.userData.userId] }
+            dislikes: { $nin: [req.userData.userId] },
+            matches: { $nin: [req.userData.userId] }
         })
         .lean()
         .then(function(doc) {
@@ -89,6 +105,7 @@ router.get('/', checkAuth, function(req, res, next) {
             gender: 'male',
             // where user has not been shown before
             likes: { $nin: [req.userData.userId] },
+            dislikes: { $nin: [req.userData.userId] },
             dislikes: { $nin: [req.userData.userId] }
         })
         .lean()
