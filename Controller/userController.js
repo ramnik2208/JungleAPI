@@ -5,20 +5,13 @@ const bcrypt = require('bcrypt');
 const jwt = require ("jsonwebtoken");
 const checkAuth = require('../Middleware/check-auth');
 const User = require('../Model/user');
+const Notification = require('../Model/notification')
 
 //Oprettet af bruger, som bliver gemt i MongoDB
 //Bcrypt sørger for at encodet brugerens password med 10 ekstra koder. 
 //Hvis brugren er oprettet, giver serveren en succes. (SAVE/THEN) 
 //Hvis brugren ikke er oprettet bliver der send en error ud (CATCH). 
 //Der kan sagtens oprettes flere bruger under samme email, men det skal ikke ses. 
-
-controller.get('/all', (req, res, next) => {
-  User.find().lean()
-  .then(function(doc) {
-    console.log(doc)
-    res.render('index', {users: doc});
-  });
-});
 
 controller.get('/signup', (request, response) => {
   response.render('signup');

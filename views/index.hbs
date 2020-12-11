@@ -1,4 +1,7 @@
 <div class="nav"> 
+    <div style="float: left;">
+        <a href="/matches"><Button class="roundedButton">My Matches</Button></a>
+    </div>
     <div class="right">
         <a href="/user/account"><Button class="roundedButton">My Profile</Button></a>
     </div>
@@ -8,7 +11,15 @@
         </form>
     </div>
 </div>
+<div class="notifications" style="float: left; text-align:center;">
+    {{#each notifications}}
+    <div class="smallnotify">
+    <p style="font-size: 8px;">{{created_at}}</p>
+    <p>{{message}}</p>
+    </div>
+        {{/each}}
 
+</div>
 <div class="center">
 <h1> Jungle </h1> 
 <div>
