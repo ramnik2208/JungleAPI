@@ -1,0 +1,162 @@
+* {box-sizing: border-box}
+
+body {
+  background-color: #f7f8f9;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.nav {
+  height: 60px;
+  width: 100%;
+}
+
+.right {
+  margin-right: 10px;
+  float: right;
+}
+
+.edit {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .center {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .tinder--buttons {
+    flex: 0 0 100px;
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  .tinder--buttons button {
+    border-radius: 50%;
+    line-height: 60px;
+    width: 60px;
+    border: 0;
+    background: #645bff;
+    display: inline-block;
+    margin: 0 8px;
+  }
+  
+  .tinder--buttons button:focus {
+    outline: 0;
+  }
+  
+  .tinder--buttons i {
+    font-size: 32px;
+    vertical-align: middle;
+  }
+
+  .tinder_love .fa-heart {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  
+  .tinder_nope .fa-remove {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  .fa-heart {
+    color: #FFACE4;
+  }
+  
+  .fa-remove {
+    color: #CDD6DD;
+  }
+
+  textarea:focus, input:focus{
+    outline: none;
+}
+
+  input {
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #32325d;
+    height: 40px;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    margin: 5px 0 22px 0;
+    -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+  padding: 10px 12px;
+  width: 100%
+  }
+
+  input:focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+    border: 2px solid #645bff;
+  }
+
+  .card {
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #32325d;
+    height: 220px;
+    width: 300px;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    margin: 5px 0 22px 0;
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    margin-bottom: 80px;
+  }
+
+  .smallnotify {
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #32325d;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    padding: 5px;
+  }
+
+  select {
+    margin-bottom: 20px
+  }
+
+.login {
+  width: 250px;
+    text-align: center;
+    margin: auto;
+}
+
+.roundedButton {
+  text-transform: capitalize;
+  border-radius: 4px;
+  font-size: 15px;
+  height: 40px;
+  width: 100%;
+}
+
+button {
+    text-transform: uppercase;
+    font-weight: 600;
+/*    padding: 6px 15px; */
+    margin-right: 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    background-color: #645bff;
+    color: whitesmoke;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+  
+}
+
+button:hover {
+  opacity:1;
+}
+ 
